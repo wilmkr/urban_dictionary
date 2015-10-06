@@ -8,6 +8,7 @@ class Crud
 {
     public static function create($newEntry)
     {
+        //test that newEntry is an array
         array_push(UrbanWords::$data, $newEntry);
     }
 
@@ -16,13 +17,15 @@ class Crud
         return UrbanWords::$data;
     }
 
-    public function update()
+    public static function update($index, $newEntry)
     {
-
+        //test that index is an integer and that newEntry is an array
+        UrbanWords::$data = array_splice(UrbanWords::$data, $index, 1);
     }
 
-    public function delete()
+    public static function delete()
     {
-
+        //test that index is an integer and that newEntry is an array
+        UrbanWords::$data = array_splice(UrbanWords::$data, $index, 1);
     }
 }
