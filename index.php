@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use Wilson\UrbanWords;
 use Wilson\Crud;
+
 ?>
 
 <html>
@@ -19,7 +20,7 @@ use Wilson\Crud;
         //Crud::delete(1);
         $arr = Crud::read();
 
-        echo '<table width="700" cellpadding="3" border="1" style="font-family:arial; font-size:12px;">';
+        echo '<table width="60%" cellpadding="3" border="1" style="font-family:arial; font-size:12px;">';
         echo "<tr>";
         echo "<th><br /></th> <th>Word</th> <th>Meaning</th> <th>Example</th>";
         echo "</tr>";
@@ -30,11 +31,11 @@ use Wilson\Crud;
             echo "<td>".$arr[$x]["description"]."</td>";
             echo "<td>".$arr[$x]["sample-sentence"]."</td>";
             echo "</tr>";
-
+        }
         echo "</table>";
     }
     catch(Exception $e) {
-        echo $e->getMessage();
+        echo $e->getMessage()." ".$e->getFile().", line ".$e->getLine().".";
     }
 ?>
 
