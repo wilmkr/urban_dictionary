@@ -4,7 +4,7 @@ namespace Wilson;
 
 class UrbanWords
 {
-  public static $data = [
+    public static $data = [
         [
             "slang" => "Tight",
             "description" => "When someone performs an awesome task",

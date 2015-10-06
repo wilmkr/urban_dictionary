@@ -11,9 +11,9 @@ class Crud
         array_push(UrbanWords::$data, $newEntry);
     }
 
-    public function read()
+    public static function read()
     {
-
+        return UrbanWords::$data;
     }
 
     public function update()
