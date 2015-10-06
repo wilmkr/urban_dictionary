@@ -8,7 +8,6 @@ class Crud
 {
     public static function create($newEntry)
     {
-        //test that newEntry is an array
         array_push(UrbanWords::$data, $newEntry);
     }
 
@@ -17,15 +16,18 @@ class Crud
         return UrbanWords::$data;
     }
 
-    public static function update($index, $newEntry)
+    public static function update($word, $newMeaning)
     {
-        //test that index is an integer and that newEntry is an array
-       array_splice(UrbanWords::$data, $index, 1, $newEntry);
+        foreach(UrbanWords::$data as &$value) {
+            if($value['slang'] === $word) {
+                $value['description'] = $newMeaning;
+                break;
+            }
+        }
     }
 
     public static function delete($index)
     {
-        //test that index is an integer
         array_splice(UrbanWords::$data, $index, 1);
     }
 }

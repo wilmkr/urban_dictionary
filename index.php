@@ -1,10 +1,13 @@
 <?php
+
 require 'vendor/autoload.php';
+
 use Wilson\UrbanWords;
 use Wilson\Crud;
 
 Crud::create(["slang"=>"cool", "description"=>"When something is awesome", "sample-sentence"=>"That's really cool."]);
-Crud::update(0, ["slang"=>"Hip", "description"=>"When something is trendy", "sample-sentence"=>"Hip style"]);
+//Crud::update(0, ["slang"=>"Hip", "description"=>"When something is trendy", "sample-sentence"=>"Hip style"]);
+Crud::update("cool", "new meaning...");
 //Crud::delete(1);
 
 echo '<table width="700" cellpadding="3" border="1" style="font-family:arial; font-size:12px;">';
