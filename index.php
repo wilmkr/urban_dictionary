@@ -1,6 +1,11 @@
 <?php
 require 'vendor/autoload.php';
 use Wilson\UrbanWords;
+use Wilson\Crud;
 
-$uw = new UrbanWords();
-var_dump($uw);
+//Crud::create(["slang"=>"cool", "description"=>"When something is awesome", "sample-sentence"=>"bbb"]);
+$arr = UrbanWords::$data;
+
+for($x=0; $x < count($arr); $x++) {
+    echo $arr[$x]["slang"].":".$arr[$x]["description"]."<br />";
+}
