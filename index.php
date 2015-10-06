@@ -6,16 +6,24 @@ use Wilson\UrbanWords;
 use Wilson\Crud;
 
 Crud::create(["slang"=>"cool", "description"=>"When something is awesome", "sample-sentence"=>"That's really cool."]);
-//Crud::update(0, ["slang"=>"Hip", "description"=>"When something is trendy", "sample-sentence"=>"Hip style"]);
-Crud::update("cool", "new meaning...");
+//Crud::update("cool", "new meaning...");
 //Crud::delete(1);
+?>
+
+<html>
+<head>
+<title>Checkpoint 1a</title>
+</head>
+<body>
+
+<?php
+$arr = Crud::read();
 
 echo '<table width="700" cellpadding="3" border="1" style="font-family:arial; font-size:12px;">';
 echo "<tr>";
 echo "<th><br /></th> <th>Word</th> <th>Meaning</th> <th>Example</th>";
 echo "</tr>";
 
-$arr = Crud::read();
 for($x=0; $x < count($arr); $x++) {
     echo "<tr valign='top'>";
     echo "<td>".($x+1).".</td>";
@@ -26,5 +34,7 @@ for($x=0; $x < count($arr); $x++) {
 }
 
 echo "</table>";
-//unset($arr[1]);
-//var_dump($arr);
+?>
+
+</body>
+</html>

@@ -1,5 +1,10 @@
 <?php
 
+namespace Wilson\tests;
+
+use Wilson\Crud;
+use PHPUnit_Framework_TestCase;
+
 class CrudTest extends PHPUnit_Framework_TestCase
 {
     public function testCreate()
