@@ -78,7 +78,7 @@ Please check out [CONTRIBUTING](CONTRIBUTING.md) file for detailed contribution 
 If you discover any security related issues, please email wilson.omokoro@andela.com instead of using the issue tracker.
 
 ## Credits
-Open-source Evangelist is maintained by Wilson Omokoro.
+Urban Dictionary is maintained by Wilson Omokoro.
 
 ## License
 UrbanDictionary is released under the MIT Licence. See the bundled [LICENSE](LICENSE.md) file for more details.
