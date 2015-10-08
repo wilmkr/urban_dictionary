@@ -1,4 +1,4 @@
-# UrbanDictionary
+## UrbanDictionary
 Urban dictionary is a package that stores urban words (slangs) and their meanings in an associative array. It also stores examples of how each urban word is used. The meaning of urban words can be edited, and words can be deleted from the dictionary.
 
 The package also ranks words in a sentence based on the number of occurrence of each word in any given sentence.
@@ -14,7 +14,7 @@ via composer
 
 ```$ composer require wilson/urbandictionary```
 
-Then 
+Then
 
 ```$ composer install```
 
@@ -39,14 +39,27 @@ Crud::create($array);```
 
 - Rank words in a sentence
 
-```$sampleSentence = "a sample sentence...";
-  print_r(Ranking::rank($sampleSentence));```
-  
-  
-  # Testing
-  
-  For testing
-  
-  ```$ phpunit tests```
+```
+$sampleSentence = "a sample sentence...";
+print_r(Ranking::rank($sampleSentence));
+```
+
+# Testing
+
+For testing
+
+```$ phpunit tests```
+
+## Change log
+Please check out [CHANGELOG](CHANGELOG.md) file for information on what has changed recently.
+
+## Contributing
+Please check out [CONTRIBUTING](CONTRIBUTING.md) file for detailed contribution guidelines.
+
+## Credits
+Open-source Evangelist is maintained by `Dara Oladosu`.
+
+## License
+UrbanDict is released under the MIT Licence. See the bundled [LICENSE](LICENSE.md) file for more details.
 
 
