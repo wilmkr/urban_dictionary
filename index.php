@@ -34,13 +34,14 @@ use Wilson\UrbanWords;
             echo "</tr>";
         }
         echo "</table>";
+
+        //$sampleSentence = "Andrei: Prosper,Have you finished the curriculum?. Prosper: Yes. Andrei: Tight, Tight, Tight!";
+        $sampleSentence = 123456;
+        print_r(Ranking::rank($sampleSentence));
     }
     catch(Exception $e) {
         echo $e->getMessage()." ".$e->getFile().", line ".$e->getLine().".";
     }
-
-    $sampleSentence = "Andrei: Prosper,Have you finished the curriculum?. Prosper: Yes. Andrei: Tight, Tight, Tight!";
-    print_r(Ranking::rank($sampleSentence));
 ?>
 
 </body>
