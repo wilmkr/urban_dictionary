@@ -2,8 +2,9 @@
 
 require 'vendor/autoload.php';
 
-use Wilson\UrbanWords;
 use Wilson\Crud;
+use Wilson\Ranking;
+use Wilson\UrbanWords;
 
 ?>
 
@@ -16,7 +17,7 @@ use Wilson\Crud;
 <?php
     try {
         Crud::create(["slang"=>"cool", "description"=>"When something is awesome", "sample-sentence"=>"That's really cool."]);
-        //Crud::update("cool", "new meaning...");
+        Crud::update("cool", "new meaning...");
         //Crud::delete(1);
         $arr = Crud::read();
 
@@ -37,6 +38,9 @@ use Wilson\Crud;
     catch(Exception $e) {
         echo $e->getMessage()." ".$e->getFile().", line ".$e->getLine().".";
     }
+
+    $sampleSentence = "Andrei: Prosper,Have you finished the curriculum?. Prosper: Yes. Andrei: Tight, Tight, Tight!";
+    print_r(Ranking::rank($sampleSentence));
 ?>
 
 </body>
