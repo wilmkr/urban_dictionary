@@ -7,6 +7,11 @@ use Wilson\UrbanWords;
 
 class Crud
 {
+    /**
+     * function to add a new word to the data array in UrbanWords class
+     * @param  array $newEntry, an array containing a word, meaning, and example usage
+     * @return array
+     */
     public static function create($newEntry)
     {
         if(!(is_array($newEntry))) {
@@ -16,20 +21,27 @@ class Crud
         return $newEntry;
     }
 
+    /**
+     * function to read words from the data array in UrbanWords class
+     * @return array
+     */
     public static function read()
     {
         return UrbanWords::$data;
     }
 
+    /**
+     * function updates the meaning of words in the data array in UrbanWords class
+     * @param  string $word
+     * @param  string $newMeaning
+     */
     public static function update($word, $newMeaning)
     {
-        if(!(is_string($word)) || $word == null) {
+        if (!(is_string($word)) || $word == null) {
             throw new  Exception('Error Processing Request; $word is not a valid string.');
-        }
-        else if(!(is_string($newMeaning)) || $word == null) {
+        } else if(!(is_string($newMeaning)) || $word == null) {
             throw new Exception('Error processing request; $newMeaning is not a valid string.');
-        }
-        else {
+        } else {
             foreach(UrbanWords::$data as &$value) {
                 if($value['slang'] === $word) {
                     $value['description'] = $newMeaning;
@@ -39,6 +51,11 @@ class Crud
         }
     }
 
+    /**
+     * function deletes words from the data array in UrbanWords class
+     * @param  integer $index
+     * @return integer $index
+     */
     public static function delete($index)
     {
         if(!(is_int($index))) {

@@ -4,6 +4,10 @@ namespace Wilson;
 
 class UrbanWords
 {
+    /**
+     * urban words array
+     * @var array
+     */
     public static $data = [
         [
             "slang" => "Tight",

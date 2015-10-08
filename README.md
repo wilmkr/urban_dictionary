@@ -1,4 +1,5 @@
 # UrbanDictionary
+[![Build Status](https://travis-ci.org/andela-womokoro/urban_dictionary.svg)](https://travis-ci.org/andela-womokoro/urban_dictionary)
 Urban dictionary is a package that stores urban words (slangs) and their meanings in an associative array. It also stores examples of how each urban word is used. The meaning of urban words can be edited, and words can be deleted from the dictionary.
 
 The package also ranks words in a sentence based on the number of occurrence of each word in any given sentence.

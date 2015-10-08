@@ -6,6 +6,11 @@ use Exception;
 
 class Ranking
 {
+    /**
+     * function ranks words in a string based on number of occurrence in the string
+     * @param  string $string
+     * @return array
+     */
     public static function rank($string)
     {
         if(!(is_string($string)) || $string == null) {
@@ -24,6 +29,12 @@ class Ranking
         }
     }
 
+    /**
+     * function counts the number of occurrence of a word in the supplied array
+     * @param  array $array
+     * @param  string $word
+     * @return integer
+     */
     public static function countOccurrence($array, $word)
     {
         return count(array_keys($array, $word, false));
