@@ -16,7 +16,7 @@ The package contains the following classes
 via composer
 
 ```
-$ composer require wilson/urbandictionary
+$ composer require wilson/cp1
 ```
 
 Then
