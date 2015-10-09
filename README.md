@@ -19,12 +19,6 @@ via composer
 $ composer require wilson/cp1
 ```
 
-Then
-
-```
-$ composer install
-```
-
 ## Usage
 
 - Add urban words to the dictionary
