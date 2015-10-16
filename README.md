@@ -31,19 +31,25 @@ Crud::create($array);
 - Retrieve all words in the dictionary
 
 ```
-$arr = Crud::read();
+$arr = Crud::readAll();
 ```
 
-- Update the meaning of a word
+- Retrieve a single word from the dictionary
 
 ```
-Crud::update("word", "new meaning...");
+$arr = Crud::read("word");
+```
+
+- Update a word, its meaning, or its sample sentence
+
+```
+Crud::update("word", "field to update", "new value");
 ```
 
 - Delete a word
 
 ```
-Crud::delete($index);
+Crud::delete("word");
 ```
 
 - Rank words in a sentence
