@@ -13,17 +13,21 @@ class RankingTest extends PHPUnit_Framework_TestCase
      */
     public function testRank()
     {
-        $this->assertInternalType('array', Ranking::rank("a test string"));
+        $sampleSentence = "The house is really really beautiful.";
+        $expectedArray = ["really"=>2, "beautiful"=>1, "is"=>1, "house"=>1, "The"=>1];
+
+        $this->assertInternalType('array', Ranking::rank($sampleSentence));
+        $this->assertEquals($expectedArray, Ranking::rank($sampleSentence));
     }
 
     /**
      * test that countOccurrence() method in ranking class returns the correct type and value
      * @return integer
      */
-    // public function testCountOccurrence()
-    // {
-    //     $sampleArray = ["one", "two", "three", "three"];
-    //     $this->assertInternalType('integer', Ranking::countOccurrence($sampleArray, "three"));
-    //     $this->assertEquals(2, Ranking::countOccurrence($sampleArray, "three"));
-    // }
+    public function testCountOccurrence()
+    {
+        $sampleArray = ["one", "two", "three", "three"];
+        $this->assertInternalType('integer', Ranking::countOccurrence($sampleArray, "three"));
+        $this->assertEquals(2, Ranking::countOccurrence($sampleArray, "three"));
+    }
 }
