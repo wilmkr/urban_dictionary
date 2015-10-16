@@ -7,39 +7,55 @@ use PHPUnit_Framework_TestCase;
 
 class CrudTest extends PHPUnit_Framework_TestCase
 {
+    private $testArray = ["slang"=>"Tush", "description"=>"when something is nice and attractive", "sample-sentence"=>"The house is tush!"];
+
     /**
      * test that the parameter passed to create() in Crud class is an array
-     * @return array
      */
     public function testCreate()
     {
-        $this->assertInternalType('array', Crud::create(["key"=>"value"]));
+        $this->assertInternalType('array', Crud::create($this->testArray));
+    }
+
+    /**
+     * test that when a single word is read from the array, it actully has a meaning and sample sentence
+     */
+    public function testRead()
+    {
+        Crud::create($this->testArray);
+
+        $this->assertArrayHasKey('slang', Crud::read($this->testArray["slang"]));
+        $this->assertArrayHasKey('description', Crud::read($this->testArray["slang"]));
+        $this->assertArrayHasKey('sample-sentence', Crud::read($this->testArray["slang"]));
     }
 
     /**
      * test that the read function in Crud class returns an array
-     * @return array
      */
-    public function testRead()
+    public function testReadAll()
     {
-        $this->assertInternalType('array', Crud::read());
+        $this->assertInternalType('array', Crud::readAll());
     }
 
     /**
-     * test that the first parameter to update method in Crud class is an integer, and the second is an array
-     * @return
+     * test that a word, its meaning, and sample sentence can be updated in the data array
      */
     public function testUpdate()
     {
+        Crud::create($this->testArray);
 
+        $this->assertTrue(Crud::update($this->testArray["slang"], "description", "bla bla bla"));
+        $this->assertTrue(Crud::update($this->testArray["slang"], "sample-sentence", "bla bla bla"));
+        $this->assertTrue(Crud::update($this->testArray["slang"], "slang", "bla bla bla"));
     }
 
     /**
-     * test that the index passed to delete() in Crud class is an integer
-     * @return integer
+     * test that a word can actually be deleted from the data array
      */
     public function testDelete()
     {
-        $this->assertInternalType('integer', Crud::delete(0));
+        Crud::create($this->testArray);
+
+        $this->assertTrue(Crud::delete($this->testArray["slang"]));
     }
 }
