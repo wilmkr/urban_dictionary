@@ -8,7 +8,7 @@ use Wilson\UrbanWords;
 class Crud
 {
     /**
-     * This function adds a new word entry to the data array in UrbanWords class
+     * This function adds a new word or entry to the data array in UrbanWords class
      * @param  array $newEntry. An array containing a word, its meaning, and example usage
      * @return array
      */
