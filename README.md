@@ -31,13 +31,13 @@ Crud::create($array);
 - Retrieve all words in the dictionary
 
 ```
-$arr = Crud::readAll();
+$arr = Crud::getAll();
 ```
 
 - Retrieve a single word from the dictionary
 
 ```
-$arr = Crud::read("word");
+$arr = Crud::find("word");
 ```
 
 - Update a word, its meaning, or its sample sentence
