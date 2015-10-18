@@ -20,21 +20,21 @@ class CrudTest extends PHPUnit_Framework_TestCase
     /**
      * test that when a single word is read from the array, it actully has a meaning and sample sentence
      */
-    public function testRead()
+    public function testFind()
     {
         Crud::create($this->testArray);
 
-        $this->assertArrayHasKey('slang', Crud::read($this->testArray["slang"]));
-        $this->assertArrayHasKey('description', Crud::read($this->testArray["slang"]));
-        $this->assertArrayHasKey('sample-sentence', Crud::read($this->testArray["slang"]));
+        $this->assertArrayHasKey('slang', Crud::find($this->testArray["slang"]));
+        $this->assertArrayHasKey('description', Crud::find($this->testArray["slang"]));
+        $this->assertArrayHasKey('sample-sentence', Crud::find($this->testArray["slang"]));
     }
 
     /**
      * test that the read function in Crud class returns an array
      */
-    public function testReadAll()
+    public function testGetAll()
     {
-        $this->assertInternalType('array', Crud::readAll());
+        $this->assertInternalType('array', Crud::getAll());
     }
 
     /**

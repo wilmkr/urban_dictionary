@@ -27,7 +27,7 @@ class Crud
      * This function reads the meaning and sample sentence of a single word in the data array in UrbanWords class
      * @return [type] [description]
      */
-    public static function read($word)
+    public static function find($word)
     {
         $entry = [];
         $index = 0;
@@ -47,7 +47,7 @@ class Crud
      * This function reads the meanings and sample sentences of all words in the data array in UrbanWords class
      * @return array
      */
-    public static function readAll()
+    public static function getAll()
     {
         return UrbanWords::$data;
     }
