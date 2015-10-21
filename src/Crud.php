@@ -25,7 +25,7 @@ class Crud
 
     /**
      * This function reads the meaning and sample sentence of a single word in the data array in UrbanWords class
-     * @return [type] [description]
+     * @return
      */
     public static function find($word)
     {
