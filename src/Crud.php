@@ -54,7 +54,7 @@ class Crud
 
     /**
      * This function updates either a word, its meaning, or its example sentence in the data array in UrbanWords class
-     * @return boolean             indicates whether the update was successful or not
+     * @return boolean
      */
     public static function update($word, $fieldToUpdate, $newValue)
     {
@@ -62,15 +62,17 @@ class Crud
 
         if(! is_string($word) || $word == null || $word == "") {
             throw new  Exception('Error Processing Request; $word is not a valid string.');
-        } else if(! is_string($newValue) || $newValue == null || $newValue == "") {
+        }
+
+        if(! is_string($newValue) || $newValue == null || $newValue == "") {
             throw new  Exception('Error Processing Request; $newValue is not a valid string.');
-        } else {
-            foreach(UrbanWords::$data as &$value) {
-                if(strtolower($value['slang']) === strtolower($word)) {
-                    $value[$fieldToUpdate] = $newValue;
-                    $entryUpdated = true;
-                    break;
-                }
+        }
+
+        foreach(UrbanWords::$data as &$value) {
+            if(strtolower($value['slang']) === strtolower($word)) {
+                $value[$fieldToUpdate] = $newValue;
+                $entryUpdated = true;
+                break;
             }
         }
 
