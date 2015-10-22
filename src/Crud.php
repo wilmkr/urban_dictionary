@@ -60,11 +60,11 @@ class Crud
     {
        $entryUpdated = false;
 
-        if(! is_string($word) || $word == null || $word == "") {
+        if(! is_string($word) || is_null($word) || $word == "") {
             throw new  Exception('Error Processing Request; $word is not a valid string.');
         }
 
-        if(! is_string($newValue) || $newValue == null || $newValue == "") {
+        if(! is_string($newValue) || is_null($newValue) || $newValue == "") {
             throw new  Exception('Error Processing Request; $newValue is not a valid string.');
         }
 

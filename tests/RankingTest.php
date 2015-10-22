@@ -13,7 +13,13 @@ class RankingTest extends PHPUnit_Framework_TestCase
     public function testRank()
     {
         $sampleSentence = "The house is really really beautiful.";
-        $expectedArray = ["really"=>2, "beautiful"=>1, "is"=>1, "house"=>1, "The"=>1];
+        $expectedArray = [
+            "really" => 2,
+            "beautiful" => 1,
+            "is" => 1,
+            "house" => 1,
+            "The" => 1
+        ];
 
         $this->assertInternalType('array', Ranking::rank($sampleSentence));
         $this->assertEquals($expectedArray, Ranking::rank($sampleSentence));

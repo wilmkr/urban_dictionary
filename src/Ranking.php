@@ -12,21 +12,20 @@ class Ranking
      */
     public static function rank($string)
     {
-        if(! is_string($string) || $string == null) {
+        if(! is_string($string) || is_null($string)) {
             throw new  Exception('Error Processing Request; $string is not a valid string.');
         }
-        else {
-            $stringArray = str_word_count($string, 1);
-            $dynamicArray = [];
 
-            for($x = 0; $x < count($stringArray); $x++) {
-                $dynamicArray[$stringArray[$x]] = Ranking::countOccurrence($stringArray, $stringArray[$x]);
-            }
+        $stringArray = str_word_count($string, 1);
+        $dynamicArray = [];
 
-            array_multisort($dynamicArray, SORT_DESC);
-
-            return $dynamicArray;
+        for($x = 0; $x < count($stringArray); $x++) {
+            $dynamicArray[$stringArray[$x]] = Ranking::countOccurrence($stringArray, $stringArray[$x]);
         }
+
+        array_multisort($dynamicArray, SORT_DESC);
+
+        return $dynamicArray;
     }
 
     /**
