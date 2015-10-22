@@ -7,7 +7,11 @@ use PHPUnit_Framework_TestCase;
 
 class CrudTest extends PHPUnit_Framework_TestCase
 {
-    private $testArray = ["slang"=>"Tush", "description"=>"nice, attractive", "sample-sentence"=>"The house is tush!"];
+    private $testArray = [
+        "slang"=>"Tush",
+        "description"=>"nice, attractive",
+        "sample-sentence"=>"The house is tush!"
+    ];
 
     /**
      * test that the parameter passed to create() in Crud class is an array
